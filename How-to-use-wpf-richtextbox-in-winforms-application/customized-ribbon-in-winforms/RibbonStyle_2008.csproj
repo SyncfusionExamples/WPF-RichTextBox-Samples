@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{618726BF-DDA8-48F9-A00D-F912708F46F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication626</RootNamespace>
+    <AssemblyName>WindowsFormsApplication626</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.Shared.Base">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources1.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAs32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoverPage32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlankPage32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageBreak32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Italic16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bold16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Underline16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strikethrough16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Subscript16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Superscript16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextHighlightColor16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FontColor16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextHighlightColor161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearFormatting16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShrinkFont16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrowFont16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2007black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2007blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2007silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2010black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2010blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Birds.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boxes3D.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bubbles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Butterflies.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CircleBands.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circles.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circles2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DottedArrows.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floweral.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lines.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nodes.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0202_InsertShape_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0205_WebInsertHyperlink_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0356_NewComment_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_business_contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_calendar_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_charts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_paperclip_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_speaker_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_addressHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greentick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IssueTracking_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintArea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RSS_Default_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\2016.png" />
+    <None Include="Resources\2016Black.png" />
+    <None Include="Resources\2016DarkGray.png" />
+    <None Include="Resources\2016White.png" />
+    <Content Include="Resources\Dis2007black.png" />
+    <Content Include="Resources\Dis2007blue.png" />
+    <Content Include="Resources\Dis2007silver.png" />
+    <Content Include="Resources\Dis2010.png" />
+    <Content Include="Resources\Dis2010black.png" />
+    <Content Include="Resources\Dis2010blue.png" />
+    <Content Include="Resources\Dis2013.png" />
+    <Content Include="Resources\DisBirds.bmp" />
+    <Content Include="Resources\DisBoxes3D.bmp" />
+    <Content Include="Resources\DisBubbles.bmp" />
+    <Content Include="Resources\DisButterflies.bmp" />
+    <Content Include="Resources\DisCircleBands.bmp" />
+    <Content Include="Resources\DisCircles.bmp" />
+    <Content Include="Resources\DisCircles2.bmp" />
+    <Content Include="Resources\DisDottedArrows.bmp" />
+    <Content Include="Resources\DisFloweral.bmp" />
+    <Content Include="Resources\Dislight.png" />
+    <Content Include="Resources\DisLines.bmp" />
+    <Content Include="Resources\DisNodes.bmp" />
+    <None Include="Resources\Dis2016White.png" />
+    <None Include="Resources\Dis2016.png" />
+    <None Include="Resources\Dis2016Black.png" />
+    <None Include="Resources\Dis2016DarkGray.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

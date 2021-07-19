@@ -1,0 +1,1678 @@
+﻿<Syncfusion:RibbonWindow x:Class="DocumentEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:this="clr-namespace:DocumentEditor"
+        Icon="App.ico" Office2010Icon="/Assets/Syncfusion.png" SnapsToDevicePixels="True" IsGlassActive="False" 
+        x:Name="ribbonWindow" Title="{Binding DocumentTitle}" Width="1087" Height="635"
+        WindowState="Normal" WindowStartupLocation="CenterScreen" Syncfusion:SkinStorage.VisualStyle="Office2013">
+
+    <Syncfusion:RibbonWindow.Resources>
+        <Syncfusion:FontFamilyStringConverter x:Key="FontFamilyStringConverter"/>
+        <Syncfusion:LeftAlignmentToggleConverter x:Key="LeftAlignmentToggleConverter"/>
+        <Syncfusion:CenterAlignmentToggleConverter x:Key="CenterAlignmentToggleConverter"/>
+        <Syncfusion:RightAlignmentToggleConverter x:Key="RightAlignmentToggleConverter"/>
+        <Syncfusion:JustifyAlignmentToggleConverter x:Key="JustifyAlignmentToggleConverter"/>
+        <Syncfusion:SingleStrikeThroughToggleConverter x:Key="SingleStrikeThroughToggleConverter"/>
+        <Syncfusion:DoubleStrikeThroughToggleConverter x:Key="DoubleStrikeThroughToggleConverter"/>
+        <Syncfusion:SubscriptToggleConverter x:Key="SubscriptToggleConverter"/>
+        <Syncfusion:SuperscriptToggleConverter x:Key="SuperscriptToggleConverter"/>
+        <Syncfusion:UnderlineToggleConverter x:Key="UnderlineToggleConverter"/>
+        <Syncfusion:LineSpacingTypeStringConverter x:Key="LineSpacingTypeStringConverter"/>
+        <Syncfusion:DoubleStringConverter x:Key="DoubleStringConverter"/>
+        <Syncfusion:HighlightColorToggleConverter x:Key="HighlightColorToggleConverter"/>
+        <this:DocumentEditorResourceWrapper x:Key="DocumentEditorResourceWrapper"/>
+        <this:LineSpacingToggleConverter x:Key="LineSpacingToggleConverter"/>
+        <this:PercentageDoubleConverter x:Key="PercentageDoubleConverter" />
+        <this:PercentageStringConverter x:Key="PercentageStringConverter" />
+        <Style x:Key="StatusBarRibbonButtonStyle" TargetType="{x:Type Syncfusion:RibbonButton}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#FF00156E"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Label" Value="New Button"/>
+            <Setter Property="LargeIcon">
+                <Setter.Value>
+                    <BitmapImage UriSource="pack://application:,,,/Syncfusion.Tools.WPF;component/Framework/Ribbon/Resources/WordArt32.png"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="SmallIcon">
+                <Setter.Value>
+                    <BitmapImage UriSource="pack://application:,,,/Syncfusion.Tools.WPF;component/Framework/Ribbon/Resources/WordArt16.png"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Style.Triggers>
+                <Trigger Property="SizeForm" Value="ExtraSmall">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Syncfusion:RibbonButton}">
+                                <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" IsEnabled="True" MinHeight="22" Opacity="{TemplateBinding Opacity}">
+                                    <Image x:Name="Image" RenderOptions.BitmapScalingMode="NearestNeighbor" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsEnabled="True" Height="16" Margin="2" Source="{Binding SmallIcon, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Stretch="{Binding IconStretch, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="16"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="Bd" Value="#FF3E6DB5"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter Property="Background" TargetName="Bd" Value="#FF19478A"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" TargetName="Bd" Value="#FF19478A"/>
+                                    </Trigger>
+                                    <Trigger Property="Syncfusion:SkinStorage.EnableTouch" Value="True">
+                                        <Setter Property="Padding" Value="5"/>
+                                        <Setter Property="Height" TargetName="Image" Value="20"/>
+                                        <Setter Property="Width" TargetName="Image" Value="20"/>
+                                        <Setter Property="Width" TargetName="Bd" Value="47"/>
+                                        <Setter Property="Height" TargetName="Bd" Value="30"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Syncfusion:RibbonWindow.Resources>
+
+    <Syncfusion:RibbonWindow.StatusBar>
+        <Syncfusion:RibbonStatusBar Height="25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Margin="10,0,0,5" FontSize="12" ToolTip="Page number in document.">
+                        <this:RunAdv RunText="Page :" Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}"/>
+                        <this:RunAdv x:Name="currentPageNumberRun" Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}"/>
+                        <this:RunAdv RunText="of" Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}"/>
+                        <this:RunAdv x:Name="pagecountRun" Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1">
+                    <Syncfusion:RibbonButton Style="{StaticResource StatusBarRibbonButtonStyle}" SizeForm="ExtraSmall" SmallIcon="/Assets/PrintLayout.png" Command="Syncfusion:SfRichTextBoxAdv.LayoutTypeCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}" CommandParameter="Pages" ToolTip="Print Layout"/>
+                    <Syncfusion:RibbonButton Style="{StaticResource StatusBarRibbonButtonStyle}" SizeForm="ExtraSmall" SmallIcon="/Assets/WebLayout.png" Command="Syncfusion:SfRichTextBoxAdv.LayoutTypeCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}" CommandParameter="Continuous" ToolTip="Web Layout"/>
+                    <TextBlock FontSize="12" VerticalAlignment="Center" Margin="5,0,0,0">
+                        <this:RunAdv RunText="{Binding ZoomFactor, Mode=OneWay, Converter={StaticResource PercentageStringConverter}}" Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}"/>
+                        <this:RunAdv RunText="%" Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}"/>
+                    </TextBlock>
+                    <Slider x:Name="rangeslider" Focusable="False" Value="{Binding ZoomFactor, Mode=TwoWay, Converter={StaticResource PercentageDoubleConverter}}"
+                             Foreground="{Binding Path=Foreground, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:RibbonStatusBar}}}" TickFrequency="0.1" Width="150" TickPlacement="None" Minimum="0.1" Maximum="5" ToolTip="Zoom" />
+                </StackPanel>
+            </Grid>
+        </Syncfusion:RibbonStatusBar>
+    </Syncfusion:RibbonWindow.StatusBar>
+
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Syncfusion:Ribbon x:Name="ribbon" SnapsToDevicePixels="True" DataContext="{Binding ElementName=richTextBoxAdv}">
+            <Syncfusion:Ribbon.QuickAccessToolBar>
+                <Syncfusion:QuickAccessToolBar>
+                    <Syncfusion:RibbonButton ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Undo}" Command="Syncfusion:SfRichTextBoxAdv.UndoCommand" SizeForm="ExtraSmall" SmallIcon="/DocumentEditor;component/Images/QAT/Undo16.png" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=UndoToolTip}"/>
+                    <Syncfusion:RibbonButton ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Redo}" Command="Syncfusion:SfRichTextBoxAdv.RedoCommand" SizeForm="ExtraSmall" SmallIcon="/DocumentEditor;component/Images/QAT/Redo16.png" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=RedoToolTip}"/>
+                    <Syncfusion:RibbonButton ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Save}" Command="Syncfusion:SfRichTextBoxAdv.SaveDocumentCommand" SizeForm="ExtraSmall" SmallIcon="/DocumentEditor;component/Images/QAT/Save16.png" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SaveToolTip}"/>
+                </Syncfusion:QuickAccessToolBar>
+            </Syncfusion:Ribbon.QuickAccessToolBar>
+            <Syncfusion:Ribbon.ApplicationMenu>
+                <Syncfusion:ApplicationMenu ApplicationButtonImage="/DocumentEditor;component/Images/Syncfusion.png">
+                    <Syncfusion:SimpleMenuButton Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=New}" IconSize="25,33" Command="Syncfusion:SfRichTextBoxAdv.NewDocumentCommand" Icon="/DocumentEditor;component/Images/Backstage/New32.png" />
+                    <Syncfusion:SimpleMenuButton Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Open}" IconSize="25,33" Command="Syncfusion:SfRichTextBoxAdv.OpenDocumentCommand" Icon="/DocumentEditor;component/Images/Backstage/Open32.png" />
+                    <Syncfusion:SimpleMenuButton Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Save}" IconSize="25,33" Command="Syncfusion:SfRichTextBoxAdv.SaveDocumentCommand" Icon="/DocumentEditor;component/Images/Backstage/Save32.png" />
+                    <Syncfusion:SplitMenuButton Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SaveAs}" IconSize="25,32" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" Icon="/DocumentEditor;component/Images/Backstage/SaveAs32.png" >
+                        <Syncfusion:ApplicationMenuGroup>
+                            <Syncfusion:SimpleMenuButton IconSize="25,25" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WordDocx}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WordDocxToolTip}" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" CommandParameter=".docx" Icon="/DocumentEditor;component/Images/Backstage/Word2010.png"/>
+                            <Syncfusion:SimpleMenuButton IconSize="25,25" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WordDoc}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WordDocToolTip}" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" CommandParameter=".doc" Icon="/DocumentEditor;component/Images/Backstage/Word2007.png"/>
+                            <Syncfusion:SimpleMenuButton IconSize="25,25" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=HtmlDocument}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=HtmlDocumentToolTip}" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" CommandParameter=".html" Icon="/DocumentEditor;component/Images/Backstage/HtmlIcon.png"/>
+                            <Syncfusion:SimpleMenuButton IconSize="25,25" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=XamlDocument}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=XamlDocumentToolTip}" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" CommandParameter=".xaml" Icon="/DocumentEditor;component/Images/Backstage/XamlIcon.png"/>
+                            <Syncfusion:SimpleMenuButton IconSize="25,25" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=TextDocument}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=TextDocumentToolTip}" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" CommandParameter=".txt" Icon="/DocumentEditor;component/Images/Backstage/TextDocument32.png"/>
+                        </Syncfusion:ApplicationMenuGroup>
+                    </Syncfusion:SplitMenuButton>
+                    <Syncfusion:SimpleMenuButton Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Print}" IconSize="25,33" Command="Syncfusion:SfRichTextBoxAdv.PrintDocumentCommand" Icon="/DocumentEditor;component/Images/Backstage/Print32.png" />
+                    <Syncfusion:ApplicationMenu.MenuItems>
+                        <TextBlock Text="" Margin="5" Width="210"/>
+                    </Syncfusion:ApplicationMenu.MenuItems>
+                </Syncfusion:ApplicationMenu>
+            </Syncfusion:Ribbon.ApplicationMenu>
+            <Syncfusion:Ribbon.BackStage>
+                <Syncfusion:Backstage>
+                    <Syncfusion:BackstageTabItem Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Info}" >
+                        <!--Back Stage tab item content can be of any type.-->
+                        <Grid Margin="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Information}" FontFamily="Segoe UI" FontSize="20" Margin="10"/>
+                                <Rectangle Grid.Row="1" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                                <Grid Grid.Row="2" Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Syncfusion:DropDownButton Width="87" Height="80" SizeForm="Large" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ProtectDocument}" LargeIcon="/DocumentEditor;component/Images/Backstage/Protect.png" Margin="5" BorderThickness="1">
+                                        <Syncfusion:SimpleMenuButton x:Name="backstageRestrictEditingButton" Icon="/DocumentEditor;component/Images/Home/Editing/RestrictEditing.png" IconSize="30,30" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=RestrictEditing}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=RestrictEditingToolTip}" />
+                                        <Syncfusion:SimpleMenuButton x:Name="backstageEncryptDocumentButton" Icon="/DocumentEditor;component/Images/Backstage/Protect.png" IconSize="30,30" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=EncryptWithPassword}" Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=EncryptWithPasswordToolTip}" Command="Syncfusion:SfRichTextBoxAdv.ShowEncryptDocumentDialogCommand"/>
+                                    </Syncfusion:DropDownButton>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="3">
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ProtectDocument}" Grid.Column="1" FontWeight="Bold" Margin="3"/>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ProtectDocumentToolTip}" Grid.Column="1" TextWrapping="Wrap" Margin="3"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Rectangle Grid.Row="3" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                            </Grid>
+                            <Border BorderThickness="0.5" BorderBrush="#FFBCBCBC" Margin="15" Grid.Column="1" HorizontalAlignment="Left" />
+                            <Grid  Grid.Column="2">
+                                <Button x:Name="rteButton" Margin="20 30" Height="250" Width="390" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Grid>
+                                                            <Border x:Name="Border" Background="Gray" Opacity="0.1">
+                                                                <Border.BitmapEffect>
+                                                                    <BlurBitmapEffect />
+                                                                </Border.BitmapEffect>
+                                                            </Border>
+                                                            <ContentPresenter Margin="3"/>
+                                                        </Grid>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Opacity" TargetName="Border" Value="0.5"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                    <Image Source="/DocumentEditor;component/Images/RTE.png" Stretch="Fill"/>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Syncfusion:BackstageTabItem>
+                    <Syncfusion:BackstageTabItem Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=New}">
+                        <Grid Margin="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AvailableTemplates}" FontFamily="Segoe UI" FontSize="20" Margin="10"/>
+                                <Rectangle Grid.Row="1" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                                <Grid Grid.Row="2" Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Syncfusion:RibbonButton x:Name="backstageNewDocumentButton" SizeForm="Large" LargeIcon="/DocumentEditor;component/Images/Backstage/New32.png" Command="Syncfusion:SfRichTextBoxAdv.NewDocumentCommand" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BlankDocument}" Width="92" Height="80" Margin="5" BorderBrush="#FFA1A2A4" BorderThickness="1"/>
+                                    <StackPanel Grid.Column="1"  VerticalAlignment="Top"  Margin="3">
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BlankDocument}" Grid.Column="1" FontWeight="Bold" Margin="3" TextWrapping="Wrap"/>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BlankDocumentToolTip}" Grid.Column="1" TextWrapping="Wrap" Margin="3"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Rectangle Grid.Row="3" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                            </Grid>
+                            <Border BorderThickness="0.5" BorderBrush="#FFBCBCBC" Margin="15" Grid.Column="1" HorizontalAlignment="Left" />
+                            <Grid Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,5,0,0" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BlankDocument}" FontWeight="Bold" />
+                                <Border Grid.Row="1" Margin="0,10,0,0" Height="340" Width="240" BorderThickness="1" BorderBrush="Black" Background="#FFFFFF" />
+                                <Syncfusion:RibbonButton x:Name="createDocumentButton" Grid.Row="2" Width="80" Margin="0,10,0,0" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Create}" Command="Syncfusion:SfRichTextBoxAdv.NewDocumentCommand" SizeForm="Large" BorderBrush="#FFA1A2A4" BorderThickness="1" LargeIcon="/DocumentEditor;component/Images/Backstage/New32.png" HorizontalAlignment="Left"/>
+                            </Grid>
+                        </Grid>
+                    </Syncfusion:BackstageTabItem>
+                    <Syncfusion:BackStageCommandButton  x:Name="backstageOpenButton" Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Open}" Command="Syncfusion:SfRichTextBoxAdv.OpenDocumentCommand" />
+                    <Syncfusion:BackStageCommandButton x:Name="backstageSaveButton" Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Save}" Command="Syncfusion:SfRichTextBoxAdv.SaveDocumentCommand" />
+                    <Syncfusion:BackStageCommandButton x:Name="backstageSaveAsButton" Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SaveAs}" Command="Syncfusion:SfRichTextBoxAdv.SaveAsDocumentCommand" />
+                    <Syncfusion:BackStageCommandButton  x:Name="backstagePrintButton" Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Print}" Command="Syncfusion:SfRichTextBoxAdv.PrintDocumentCommand" />
+                    <Syncfusion:BackstageTabItem Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Help}">
+                        <Grid Margin="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=UserInterfaceHelp}" FontFamily="Segoe UI" FontSize="20" Margin="10"/>
+                                <Rectangle Grid.Row="1" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                                <Grid Grid.Row="2" Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Syncfusion:RibbonButton x:Name="onlineHelpButton" SizeForm="Large" Width="87" LargeIcon="/DocumentEditor;component/Images/Backstage/Help.png" Height="80" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=OnlineHelp}" Margin="5" BorderBrush="#FFA1A2A4" BorderThickness="1"/>
+                                    <StackPanel Grid.Column="1"  VerticalAlignment="Top"  Margin="3">
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=OnlineHelp}" Grid.Column="1" FontWeight="Bold" Margin="3"/>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=OnlineHelpToolTip}" Grid.Column="1" TextWrapping="Wrap" Margin="3"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Rectangle Grid.Row="3" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                                <Grid Grid.Row="4" Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Syncfusion:RibbonButton x:Name="gettingStartedButton" SizeForm="Large" Width="87" Height="80" Margin="5" LargeIcon="/DocumentEditor;component/Images/Backstage/Started.png" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=GettingStarted}" BorderBrush="#FFA1A2A4" BorderThickness="1"/>
+                                    <StackPanel Grid.Column="1"  VerticalAlignment="Top"  Margin="3">
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=GettingStarted}" Grid.Column="1" FontWeight="Bold" Margin="3"/>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=GettingStartedToolTip}" Grid.Column="1" TextWrapping="Wrap" Margin="3"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Rectangle Grid.Row="5" Stroke="Gray" HorizontalAlignment="Stretch" StrokeThickness="1" StrokeDashArray="5"  Margin="10" Height="1"/>
+                            </Grid>
+                            <Border BorderThickness="0.5" BorderBrush="#FFBCBCBC" Margin="15" Grid.Column="1" HorizontalAlignment="Left" />
+                        </Grid>
+                    </Syncfusion:BackstageTabItem>
+                </Syncfusion:Backstage>
+            </Syncfusion:Ribbon.BackStage>
+            <Syncfusion:RibbonTab Caption="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Home}">
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Clipboard}" IsLauncherButtonVisible="False">
+                    <Syncfusion:RibbonButton Margin="5" SizeForm="Large" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Paste}" IsToggle="False" LargeIcon="/DocumentEditor;component/Images/Home/Clipboard/Paste32.png" Command="Syncfusion:SfRichTextBoxAdv.PasteCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PasteToolTipHeader}" >
+                                <StackPanel>
+                                    <TextBlock  Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PasteToolTip}" MaxWidth="300" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton Margin="3" SizeForm="Small" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Cut}" HorizontalAlignment="Left" IsToggle="False" SmallIcon="/DocumentEditor;component/Images/Home/Clipboard/Cut16.png" Command="Syncfusion:SfRichTextBoxAdv.CutCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=CutToolTipHeader}" >
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=CutToolTip}" MaxWidth="250"  TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton Margin="3" SizeForm="Small" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Copy}" HorizontalAlignment="Left" IsToggle="False" SmallIcon="/DocumentEditor;component/Images/Home/Clipboard/Copy16.png" Command="Syncfusion:SfRichTextBoxAdv.CopyCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=CopyToolTipHeader}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=CutToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Font}" IsLargeButtonPanel="False" LauncherCommand="Syncfusion:SfRichTextBoxAdv.ShowFontDialogCommand">
+                    <Syncfusion:ButtonPanel Height="24" SeparatorVisibility="Collapsed">
+                        <Syncfusion:RibbonComboBox x:Name="fontFamilyComboBox" Width="110" IsEditable="True" ToolTipService.ShowOnDisabled="True" Text="{Binding Selection.CharacterFormat.FontFamily, Mode=OneWay, Converter={StaticResource FontFamilyStringConverter}}" SelectedValue="{Binding Selection.CharacterFormat.FontFamily, Mode=TwoWay, Converter={StaticResource FontFamilyStringConverter}}">
+                            <Syncfusion:RibbonComboBox.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FontToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FontToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonComboBox.ToolTip>
+                        </Syncfusion:RibbonComboBox>
+                        <Syncfusion:RibbonComboBox x:Name="fontSizeComboBox" Width="50" IsEditable="True" ToolTipService.ShowOnDisabled="True" Text="{Binding Selection.CharacterFormat.FontSize, Mode=OneWay, Converter={StaticResource DoubleStringConverter}}" SelectedValue="{Binding Selection.CharacterFormat.FontSize, Mode=TwoWay}">
+                            <Syncfusion:RibbonComboBox.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FontSizeToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FontSizeToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonComboBox.ToolTip>
+                        </Syncfusion:RibbonComboBox>
+                    </Syncfusion:ButtonPanel>
+                    <Syncfusion:ButtonPanel Height="24" SeparatorVisibility="Collapsed">
+                        <Syncfusion:RibbonButton x:Name="increaseFontSizeButton" SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" IsToggle="False" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=GrowFont}" SmallIcon="/DocumentEditor;component/Images/Home/Font/GrowFont16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=IncreaseFontSizeToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=IncreaseFontSizeToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton x:Name="decreaseFontSizeButton" SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DecreaseFont}" IsToggle="False" SmallIcon="/DocumentEditor;component/Images/Home/Font/ShrinkFont16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DecreaseFontSizeToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DecreaseFontSizeToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                    </Syncfusion:ButtonPanel>
+                    <Syncfusion:ButtonPanel Height="24">
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Bold}" Height="22" Width="24" Padding="2" IsToggle="True" HorizontalContentAlignment="Left" IsSelected="{Binding Selection.CharacterFormat.Bold, Mode=TwoWay}" SmallIcon="/DocumentEditor;component/Images/Home/Font/Bold16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BoldToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BoldToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Italic}" IsToggle="True" IsSelected="{Binding Selection.CharacterFormat.Italic, Mode=TwoWay}" SmallIcon="/DocumentEditor;component/Images/Home/Font/Italic16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ItalicToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ItalicToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Underline}" IsToggle="True" IsSelected="{Binding Selection.CharacterFormat.Underline, Converter={StaticResource UnderlineToggleConverter}, Mode=TwoWay}" SmallIcon="/DocumentEditor;component/Images/Home/Font/Underline16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=UnderlineToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=UnderlineToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SingleStrike}" IsToggle="True" IsSelected="{Binding Selection.CharacterFormat.StrikeThrough, Converter={StaticResource SingleStrikeThroughToggleConverter}, Mode=TwoWay}" SmallIcon="/DocumentEditor;component/Images/Home/Font/Strikethrough16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=StrikethroughToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=StrikethroughToolTip}"  MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SubScript}" IsToggle="True" IsSelected="{Binding Selection.CharacterFormat.BaselineAlignment, Converter={StaticResource SubscriptToggleConverter}, Mode=TwoWay}"  SmallIcon="/DocumentEditor;component/Images/Home/Font/Subscript16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SubScriptToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SubScriptToolTip}"  MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SuperScript}" IsToggle="True" IsSelected="{Binding Selection.CharacterFormat.BaselineAlignment, Converter={StaticResource SuperscriptToggleConverter}, Mode=TwoWay}" SmallIcon="/DocumentEditor;component/Images/Home/Font/Superscript16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SuperScriptToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SuperScriptToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                    </Syncfusion:ButtonPanel>
+                    <Syncfusion:ButtonPanel SeparatorVisibility="Collapsed">
+                        <Syncfusion:SplitButton x:Name="highlightColorSplitButton" ToolTipService.ShowOnDisabled="True" Padding="2" SmallIcon="/DocumentEditor;component/Images/Home/Font/HighlightColor16.png" SizeForm="ExtraSmall">
+                            <Syncfusion:SplitButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=TextHighlightColor}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=TextHighlightColorToolTip}"   MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:SplitButton.ToolTip>
+                            <Grid Background="#FFFFFF">
+                                <Grid.Resources>
+                                    <Style x:Key="HighlightColorToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                        <Setter Property="Padding" Value="1"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                    <Border x:Name="border" BorderBrush="Red" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                                        <Border x:Name="checkedBorder" BorderBrush="Yellow" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                        </Border>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="true">
+                                                            <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                                                            <Setter Property="BorderThickness" TargetName="checkedBorder" Value="1"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed" Value="true">
+                                                            <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                                                            <Setter Property="BorderThickness" TargetName="checkedBorder" Value="1"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsChecked" Value="true">
+                                                            <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="yellowHighlightButton" Grid.Column="0" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 0}" Margin="3" Height="24" Width="24" Background="#FFFFFF00" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=YellowHighlightToolTip}"/>
+                                    <ToggleButton x:Name="brightGreenHighlightButton" Grid.Column="1" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 1}" Margin="3"  Height="24" Width="24" Background="#FF00FF00" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BrightGreenHighlightToolTip}"/>
+                                    <ToggleButton x:Name="turquoiseHighlightButton" Grid.Column="2" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 2}" Margin="3" Height="24" Width="24" Background="#FF00FFFF" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=TurquoiseHighlightToolTip}"/>
+                                    <ToggleButton x:Name="pinkHighlightButton" Grid.Column="3" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 3}" Margin="3" Height="24" Width="24" Background="#FFFF00FF" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PinkHighlightToolTip}"/>
+                                    <ToggleButton x:Name="blueHighlightButton" Grid.Column="4" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 4}" Margin="3" Height="24" Width="24" Background="#FF0000FF" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BlueHighlightToolTip}"/>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="redHighlightButton" Grid.Column="0" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 5}" Margin="3" Height="24" Width="24" Background="#FFFF0000" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=RedHighlightToolTip}"/>
+                                    <ToggleButton x:Name="darkBlueHighlightButton" Grid.Column="1" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 6}" Margin="3" Height="24" Width="24" Background="#FF000080" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DarkBlueHighlightToolTip}"/>
+                                    <ToggleButton x:Name="tealHighlightButton" Grid.Column="2" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 7}" Margin="3" Height="24" Width="24" Background="#FF008080" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=TealHighlightToolTip}"/>
+                                    <ToggleButton x:Name="greenHighlightButton" Grid.Column="3" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 8}" Margin="3" Height="24" Width="24" Background="#FF008000" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=GreenHighlightToolTip}"/>
+                                    <ToggleButton x:Name="violetHighlightButton" Grid.Column="4" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 9}" Margin="3" Height="24" Width="24" Background="#FF800080" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=VioletHighlightToolTip}"/>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="darkRedHighlightButton" Grid.Column="0" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 10}" Margin="3" Height="24" Width="24" Background="#FF800000" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DarkRedHighlightToolTip}"/>
+                                    <ToggleButton x:Name="darkYellowHighlightButton" Grid.Column="1" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 11}" Margin="3" Height="24" Width="24" Background="#FF808000" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DarkYellowHighlightToolTip}"/>
+                                    <ToggleButton x:Name="darkGrayHighlightButton" Grid.Column="2" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 12}" Margin="3" Height="24" Width="24" Background="#FF808080" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Gray50HighlightToolTip}"/>
+                                    <ToggleButton x:Name="lightGrayHighlightButton" Grid.Column="3" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 13}" Margin="3" Height="24" Width="24" Background="#FFC0C0C0" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Gray25HighlightToolTip}"/>
+                                    <ToggleButton x:Name="blackHighlightButton" Grid.Column="4" Style="{StaticResource HighlightColorToggleButtonStyle}" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 14}" Margin="3" Height="24" Width="24" Background="#FF000000" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BlackHighlightToolTip}"/>
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <ToggleButton x:Name="noHighlightButton" IsChecked="{Binding Selection.CharacterFormat.HighlightColor, Mode=TwoWay, Converter={StaticResource HighlightColorToggleConverter},ConverterParameter= 15}" Margin="2" Height="24" Width="Auto" BorderThickness="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="Transparent" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NoColor}">
+                                        <ToggleButton.Content>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border Height="16" Width="16" Margin="8 0 8 0" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Gray" BorderThickness="1"/>
+                                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NoColor}" Foreground="#333333"/>
+                                            </StackPanel>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </Grid>
+                            </Grid>
+                        </Syncfusion:SplitButton>
+                        <Syncfusion:SplitButton x:Name="fontColorSplitButton" ToolTipService.ShowOnDisabled="True" Padding="2" SmallIcon="/DocumentEditor;component/Images/Home/Font/Fonts16.png" SizeForm="ExtraSmall">
+                            <Syncfusion:SplitButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FontColor}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FontColorToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:SplitButton.ToolTip>
+                            <Syncfusion:ColorPickerPalette x:Name="fontColorPicker" AutomaticColor="#00000000" IsExpanded="true" BlackWhiteVisibility="Both" MoreColorOptionVisibility="Visible" />
+                        </Syncfusion:SplitButton>
+                    </Syncfusion:ButtonPanel>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Paragraph}" IsLargeButtonPanel="False" Width="192" LauncherCommand="Syncfusion:SfRichTextBoxAdv.ShowParagraphDialogCommand">
+                    <Syncfusion:ButtonPanel Height="24">
+                        <Syncfusion:SplitButton x:Name="bulletedListSplitButton" ToolTipService.ShowOnDisabled="True" Height="22" Width="37" Padding="2" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/Bullets16.png" SizeForm="ExtraSmall">
+                            <Syncfusion:SplitButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BulletsToolTipHeader}" >
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BulletsToolTip}"/>
+                                        <TextBlock/>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BulletsToolTipMore}"   MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:SplitButton.ToolTip>
+                            <Grid Background="#FFFFFF">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="12"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="12"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="12"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=BulletLibrary}" FontWeight="Bold" Padding="4 0 0 0" Margin="2 6" VerticalAlignment="Top" SnapsToDevicePixels="True" />
+                                <Grid Grid.Row="2" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="noBulletButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=None}">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_None.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="dotBulletButton" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_Dot.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="circleBulletButton" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_Circle.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="squareBulletButton" Grid.Column="3" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_Square.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Grid.Row="3" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="flowerBulletButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_Flower.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="arrowBulletButton" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_Arrow.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="tickBulletButton" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                        <ToggleButton.Content>
+                                            <Image Height="40" Width="40" Source="/DocumentEditor;component/Images/Home/Paragraph/Bullets/Bullet_Tick.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </Grid>
+                                <Button Grid.Row="4" Grid.Column="1" Margin="0 6" Height="20" Content="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DefineList}" BorderThickness="0" Background="Transparent" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Command="Syncfusion:SfRichTextBoxAdv.ShowListDialogCommand"/>
+                            </Grid>
+                        </Syncfusion:SplitButton>
+                        <Syncfusion:SplitButton x:Name="numberedListSplitButton" ToolTipService.ShowOnDisabled="True" Height="22" Width="37" Padding="2" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/Numbering16.png" SizeForm="ExtraSmall">
+                            <Syncfusion:SplitButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberingToolTipHeader}" >
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberingToolTip}"/>
+                                        <TextBlock/>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberingToolTipMore}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:SplitButton.ToolTip>
+                            <Grid Background="#FFFFFF">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="12"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="12"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="12"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberingLibrary}" FontWeight="Bold" Padding="4 0 0 0" Margin="2 6" VerticalAlignment="Top" SnapsToDevicePixels="True" />
+                                <Grid Grid.Row="2" Grid.Column="1" Background="#FFFFFF">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="noNumberingButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=None}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_None.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="numberDotNumberingButton" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberLeftAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_Number_Dot.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="numberBraceNumberingButton" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberLeftAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_Number_Brace.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Grid.Row="3" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="upRomanNumberingButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberRightAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_UpRoman.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="upLetterNumberingButton" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberLeftAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_UpLetter.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="lowLetterBraceNumberingButton" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberLeftAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_LowLetter_Brace.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Grid.Row="4" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton x:Name="lowLetterDotNumberingButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberLeftAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_LowLetter_Dot.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton x:Name="lowRomanNumberingButton" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left" ToolTip="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NumberRightAlignment}">
+                                        <ToggleButton.Content>
+                                            <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_LowRoman.png"/>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </Grid>
+                            </Grid>
+                        </Syncfusion:SplitButton>
+                        <Syncfusion:DropDownButton x:Name="listButton" ToolTipService.ShowOnDisabled="True" Height="22" Width="37" Padding="2" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/List16.png" SizeForm="ExtraSmall">
+                            <Syncfusion:DropDownButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=MultilevelListToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=MultilevelListToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:DropDownButton.ToolTip>
+                            <Syncfusion:DropDownButton.Items>
+                                <Grid Background="#FFFFFF">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="12"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="12"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="12"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="12"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ListLibrary}" FontWeight="Bold" Padding="4 0 0 0" Margin="2 6" VerticalAlignment="Top" SnapsToDevicePixels="True" />
+                                    <Grid Grid.Row="2" Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ToggleButton x:Name="noListButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                            <ToggleButton.Content>
+                                                <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/Numbering/Numbering_None.png"/>
+                                            </ToggleButton.Content>
+                                        </ToggleButton>
+                                        <ToggleButton x:Name="normalListButton" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                            <ToggleButton.Content>
+                                                <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/List/List_Normal.png"/>
+                                            </ToggleButton.Content>
+                                        </ToggleButton>
+                                        <ToggleButton x:Name="multilevelListButton" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                            <ToggleButton.Content>
+                                                <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/List/List_Multilevel.png"/>
+                                            </ToggleButton.Content>
+                                        </ToggleButton>
+                                    </Grid>
+                                    <Grid Grid.Row="3" Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ToggleButton x:Name="bulletedListButton" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                            <ToggleButton.Content>
+                                                <Image Height="76" Width="76" Source="/DocumentEditor;component/Images/Home/Paragraph/List/List_Bullets.png"/>
+                                            </ToggleButton.Content>
+                                        </ToggleButton>
+                                    </Grid>
+                                    <Button Grid.Row="4" Grid.Column="1" Margin="0 6" Height="20" Content="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DefineList}" BorderThickness="0" Background="Transparent" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" SnapsToDevicePixels="True" Command="Syncfusion:SfRichTextBoxAdv.ShowListDialogCommand"/>
+                                </Grid>
+                            </Syncfusion:DropDownButton.Items>
+                        </Syncfusion:DropDownButton>
+                    </Syncfusion:ButtonPanel>
+                    <Syncfusion:ButtonPanel Height="24" SeparatorVisibility="Collapsed">
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DecreaseIndent}" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/DecreaseIndent16.png" Command="Syncfusion:SfRichTextBoxAdv.DecreaseIndentCommand">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DecreaseIndentToolTipHeader}" >
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DecreaseIndentToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=IncreaseIndent}" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/IncreaseIndent16.png" Command="Syncfusion:SfRichTextBoxAdv.IncreaseIndentCommand">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=IncreaseIndentToolTipHeader}" >
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=IncreaseIndentToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                    </Syncfusion:ButtonPanel>
+                    <Syncfusion:ButtonPanel Height="24" SeparatorVisibility="Visible">
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" IsToggle="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignLeft}" IsSelected="{Binding Selection.ParagraphFormat.TextAlignment, Mode=TwoWay, Converter={StaticResource LeftAlignmentToggleConverter}}" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/AlignTextLeft16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignLeftToolTipHeader}" >
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignLeftToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" IsToggle="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignCenter}" IsSelected="{Binding Selection.ParagraphFormat.TextAlignment, Mode=TwoWay, Converter={StaticResource CenterAlignmentToggleConverter}}" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/AlignTextCenter16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignCenterToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignCenterToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" IsToggle="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignRight}" IsSelected="{Binding Selection.ParagraphFormat.TextAlignment, Mode=TwoWay, Converter={StaticResource RightAlignmentToggleConverter}}" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/AlignTextRight16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignRightToolTipHeader}" >
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignRightToolTip}"  MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                        <Syncfusion:RibbonButton SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" Height="22" Width="24" Padding="2" IsToggle="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignJustify}" IsSelected="{Binding Selection.ParagraphFormat.TextAlignment, Mode=TwoWay, Converter={StaticResource JustifyAlignmentToggleConverter}}" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/AlignTextJustify16.png">
+                            <Syncfusion:RibbonButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignJustifyToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AlignJustifyToolTip}"  MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:RibbonButton.ToolTip>
+                        </Syncfusion:RibbonButton>
+                    </Syncfusion:ButtonPanel>
+                    <Syncfusion:ButtonPanel Height="24" SeparatorVisibility="Collapsed">
+                        <Syncfusion:DropDownButton Height="22" Width="37" SizeForm="ExtraSmall" ToolTipService.ShowOnDisabled="True" SmallIcon="/DocumentEditor;component/Images/Home/Paragraph/LineSpacing16.png">
+                            <Syncfusion:DropDownButton.ToolTip>
+                                <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=LineSpacingToolTipHeader}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=LineSpacingToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Syncfusion:ScreenTip>
+                            </Syncfusion:DropDownButton.ToolTip>
+                            <Syncfusion:RibbonMenuGroup Width="120" x:Name="lineSpacingMenuGroup" IconBarEnabled="True">
+                                <MenuItem Header="1.0" IsCheckable="True" IsChecked="{Binding Selection.ParagraphFormat.LineSpacing, Mode=TwoWay, Converter={StaticResource LineSpacingToggleConverter}, ConverterParameter=1}"/>
+                                <MenuItem Header="1.15" IsCheckable="True" IsChecked="{Binding Selection.ParagraphFormat.LineSpacing, Mode=TwoWay, Converter={StaticResource LineSpacingToggleConverter}, ConverterParameter=1.15}"/>
+                                <MenuItem Header="1.5" IsCheckable="True" IsChecked="{Binding Selection.ParagraphFormat.LineSpacing, Mode=TwoWay, Converter={StaticResource LineSpacingToggleConverter}, ConverterParameter=1.5}"/>
+                                <MenuItem Header="2.0" IsCheckable="True" IsChecked="{Binding Selection.ParagraphFormat.LineSpacing, Mode=TwoWay, Converter={StaticResource LineSpacingToggleConverter}, ConverterParameter=2}"/>
+                                <MenuItem Header="2.5" IsCheckable="True" IsChecked="{Binding Selection.ParagraphFormat.LineSpacing, Mode=TwoWay, Converter={StaticResource LineSpacingToggleConverter}, ConverterParameter=2.5}"/>
+                                <MenuItem Header="3.0" IsCheckable="True" IsChecked="{Binding Selection.ParagraphFormat.LineSpacing, Mode=TwoWay, Converter={StaticResource LineSpacingToggleConverter}, ConverterParameter=3}"/>
+                            </Syncfusion:RibbonMenuGroup>
+                        </Syncfusion:DropDownButton>
+                    </Syncfusion:ButtonPanel>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Editing}" IsLauncherButtonVisible="False">
+                    <Syncfusion:RibbonButton x:Name="restrictEditingButton" ToolTipService.ShowOnDisabled="True" Margin="3" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ReadOnly}" Width="60" IsSelected="{Binding IsReadOnly, Mode=TwoWay}" IsToggle="True" SizeForm="Large" LargeIcon="/DocumentEditor;component/Images/Home/Editing/RestrictEditing.png">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=RestrictEditing}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ReadOnlyToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton Margin="3" SizeForm="Small" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Find}" HorizontalAlignment="Left" IsToggle="False" SmallIcon="/DocumentEditor;component/Images/Home/Editing/Find.png" Command="Syncfusion:SfRichTextBoxAdv.ShowOptionsPaneCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FindToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=FindToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton Margin="3" SizeForm="Small" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Replace}" HorizontalAlignment="Left" IsToggle="False" SmallIcon="/DocumentEditor;component/Images/Home/Editing/Replace.png" Command="Syncfusion:SfRichTextBoxAdv.ShowFindAndReplaceDialogCommand" CommandParameter="True">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ReplaceToolTipHeader}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ReplaceToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+            </Syncfusion:RibbonTab>
+            <Syncfusion:RibbonTab Caption="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Insert}">
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Tables}" IsLauncherButtonVisible="False">
+                    <Syncfusion:DropDownButton Margin="3" Width="50" SizeForm="Large" ToolTipService.ShowOnDisabled="True" HorizontalAlignment="Center" LargeIcon="/DocumentEditor;component/Images/Insert/Table32.png" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Table}">
+                        <Syncfusion:DropDownButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AddTableToolTipHeader}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=AddTableToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:DropDownButton.ToolTip>
+                        <Syncfusion:TablePickerUI x:Name="tablePicker" CellCount="10 8" Margin="3" Command="Syncfusion:SfRichTextBoxAdv.InsertTableCommand"/>
+                        <Separator />
+                        <Syncfusion:RibbonButton x:Name="insertTableButton" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=InsertTable}" SizeForm="Small" SmallIcon="/DocumentEditor;component/Images/Insert/Table16.png" Margin="3" Command="Syncfusion:SfRichTextBoxAdv.ShowInsertTableDialogCommand"/>
+                    </Syncfusion:DropDownButton>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar IsLauncherButtonVisible="False" Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Illustrations}">
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Margin="3" Width="60" HorizontalAlignment="Center" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Picture}" Command="Syncfusion:SfRichTextBoxAdv.InsertPictureCommand" LargeIcon="/DocumentEditor;component/Images/Insert/Picture32.png">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PictureToolTipHeader}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PictureToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar IsLauncherButtonVisible="False" Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Links}">
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Margin="3" Width="70" HorizontalAlignment="Center" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Hyperlink}" LargeIcon="/DocumentEditor;component/Images/Insert/Hyperlink32.png" Command="Syncfusion:SfRichTextBoxAdv.ShowHyperlinkDialogCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=HyperlinkToolTipHeader}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=HyperlinkToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+            </Syncfusion:RibbonTab>
+            <Syncfusion:RibbonTab Caption="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Review}">
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Proofing}" IsLauncherButtonVisible="False">
+                    <Syncfusion:RibbonButton SizeForm="Large" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Spelling}" LargeIcon="/DocumentEditor;component/Images/Review/Spelling.png" Command="Syncfusion:SfRichTextBoxAdv.ShowSpellingPaneCommand">>
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SpellingToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=SpellingToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Comments}" IsLauncherButtonVisible="False">
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NewComment}" LargeIcon="/DocumentEditor;component/Images/Review/NewComment.png" Command="Syncfusion:SfRichTextBoxAdv.NewCommentCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=InsertCommentToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=InsertCommentToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DeleteComment}" LargeIcon="/DocumentEditor;component/Images/Review/DeleteComment.png" Command="Syncfusion:SfRichTextBoxAdv.DeleteCommentCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DeleteCommentToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=DeleteCommentToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PreviousComment}" LargeIcon="/DocumentEditor;component/Images/Review/PreviousComment.png" Command="Syncfusion:SfRichTextBoxAdv.PreviousCommentCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PreviousCommentToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PreviousCommentToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NextComment}" LargeIcon="/DocumentEditor;component/Images/Review/NextComment.png" Command="Syncfusion:SfRichTextBoxAdv.NextCommentCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NextCommentToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=NextCommentToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ShowCommentsToolTipHeader}" LargeIcon="/DocumentEditor;component/Images/Review/ShowComments.png" Command="Syncfusion:SfRichTextBoxAdv.ShowCommentsCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ShowCommentsToolTipHeader}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ShowCommentsToolTip}" MaxWidth="250" TextWrapping="Wrap"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+            </Syncfusion:RibbonTab>
+            <Syncfusion:RibbonTab Caption="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=View}">
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Views}" IsLauncherButtonVisible="False">
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PrintLayout}" LargeIcon="/DocumentEditor;component/Images/View/PageLayout.png" Command="Syncfusion:SfRichTextBoxAdv.LayoutTypeCommand" CommandParameter="Pages">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PrintLayout}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PrintLayoutToolTip}" MaxWidth="280" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton SizeForm="Large" ToolTipService.ShowOnDisabled="True" Width="70" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WebLayout}" LargeIcon="/DocumentEditor;component/Images/View/FlowLayout.png" Command="Syncfusion:SfRichTextBoxAdv.LayoutTypeCommand" CommandParameter="Continuous">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WebLayout}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=WebLayoutToolTip}" MaxWidth="280" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+                <Syncfusion:RibbonBar Header="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Zoom}" IsEnabled="{Binding IsZoomEnabled}" IsLauncherButtonVisible="False">
+                    <Syncfusion:RibbonButton x:Name="zoomInButton" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ZoomIn}" Width="70" LargeIcon="/DocumentEditor;component/Images/View/ZoomIn.png" SizeForm="Large">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ZoomIn}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ZoomInToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton x:Name="zoomOutButton" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ZoomOut}" Width="70" LargeIcon="/DocumentEditor;component/Images/View/ZoomOut.png" SizeForm="Large" >
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ZoomOut}" MaxWidth="250">
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=ZoomOutToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton x:Name="resetZoomButton" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Zoom100}" Width="70" LargeIcon="/DocumentEditor;component/Images/View/ResetZoom.png" SizeForm="Large" Command="Syncfusion:SfRichTextBoxAdv.PageFitCommand">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Zoom100}" >
+                                <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=Zoom100ToolTip}" TextWrapping="Wrap" MaxWidth="250"/>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton x:Name="fitOnePageButton" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=OnePageView}" Margin="1" SizeForm="Small" SmallIcon="/DocumentEditor;component/Images/View/OnePage.png" Command="Syncfusion:SfRichTextBoxAdv.PageFitCommand" CommandParameter="FitFullPage">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=OnePageView}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=OnePageViewToolTip}" MaxWidth="270" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton x:Name="fitMultiPagesButton" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=MultiplePagesView}" Margin="1" SizeForm="Small" SmallIcon="/DocumentEditor;component/Images/View/MultiplePages.png" Command="Syncfusion:SfRichTextBoxAdv.PageFitCommand" CommandParameter="FitMultiplePages">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=MultiplePagesView}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=MultiplePagesViewToolTip}" MaxWidth="270" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                    <Syncfusion:RibbonButton x:Name="fitPageWidthButton" ToolTipService.ShowOnDisabled="True" Label="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PageWidth}" Margin="1" SizeForm="Small" SmallIcon="/DocumentEditor;component/Images/View/PageWidth.png" Command="Syncfusion:SfRichTextBoxAdv.PageFitCommand" CommandParameter="FitPageWidth">
+                        <Syncfusion:RibbonButton.ToolTip>
+                            <Syncfusion:ScreenTip Description="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PageWidth}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Source={StaticResource DocumentEditorResourceWrapper}, Path=PageWidthToolTip}" MaxWidth="270" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Syncfusion:ScreenTip>
+                        </Syncfusion:RibbonButton.ToolTip>
+                    </Syncfusion:RibbonButton>
+                </Syncfusion:RibbonBar>
+            </Syncfusion:RibbonTab>
+        </Syncfusion:Ribbon>
+        <Syncfusion:SfRichTextBoxAdv x:Name="richTextBoxAdv" Background="#F1F1F1" Grid.Row="1" DocumentTitle="RichTextBoxAdv" LayoutType="Pages">
+            <Syncfusion:SfRichTextBoxAdv.SpellChecker>
+                <Syncfusion:SpellChecker IsEnabled="True">
+                    <Syncfusion:SpellChecker.CustomDictionaries>
+                        <System:String>../../Assets/CustomDictionary.dic</System:String>
+                    </Syncfusion:SpellChecker.CustomDictionaries>
+                </Syncfusion:SpellChecker>
+            </Syncfusion:SfRichTextBoxAdv.SpellChecker>
+            <Syncfusion:DocumentAdv>
+                <Syncfusion:SectionAdv>
+                    <Syncfusion:SectionAdv.SectionFormat>
+                        <Syncfusion:SectionFormat PageSize="816 1040"/>
+                    </Syncfusion:SectionAdv.SectionFormat>
+                    <Syncfusion:ParagraphAdv>
+                        <Syncfusion:ParagraphAdv.ParagraphFormat>
+                            <Syncfusion:ParagraphFormat LineSpacingType="Multiple" LineSpacing="1.5" BeforeSpacing="10" AfterSpacing="10"></Syncfusion:ParagraphFormat>
+                        </Syncfusion:ParagraphAdv.ParagraphFormat>
+                        <Syncfusion:SpanAdv Text="RichTextBoxAdv">
+                            <Syncfusion:SpanAdv.CharacterFormat>
+                                <Syncfusion:CharacterFormat Bold="True" Italic="True" FontSize="16"/>
+                            </Syncfusion:SpanAdv.CharacterFormat>
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" is a control " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="using which you can format the text, align and " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="indent" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" the paragraph, and display the content in pages or web layout mode." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="1. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Inlines">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="It allows you to " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="define the c" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ontent into paragraphs. It can be added only inside the sec" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="tions. We " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="can" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" keep 'n' number of Paragraphs inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SectionAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". Each and every paragraph may co" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="n" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="tain the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inline elements " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="like " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SpanAdv, HyperlinkAdv, ImageContainerAdv">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" and"/>
+                        <Syncfusion:SpanAdv Text=" UIContainerAdv"/>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv>
+                        <Syncfusion:SpanAdv Text="2. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Text Formatting">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="As Inline will be the content property of the ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", SpanAdv can be added only inside the ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". Every ParagraphAdv can keep 'n' number of " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inlines" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inside it." >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="It allows you to display the format" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ted text using advanced features like " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="FontSize" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="FontFamily">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="StrikeThrough"  >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Baseline" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="3. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Insert an Image" >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv>
+                        <Syncfusion:SpanAdv Text="Inordertoinsertanimageintothedocument,weoffer" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ImageContainerAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inlineintheR" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ichTex" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="t" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="BoxAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=".Itcanbeaddedonlyinsidethe " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="4. " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Insert a UIElement">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="In order to insert " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="a" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" UIElement into the document, we offer " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="UIContainerAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inline in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="RichTex" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="t" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="BoxAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". It can be added only inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="5. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Modes">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Layout mode feature allows " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="choosing" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" several " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="layouts" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="document. " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Page" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" -" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Single" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" document in the edited content can be " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="separated" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" into" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" 'n'" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" number of pages" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" depend upon the capacity of the content" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". We can customize the page margin and size using the properties" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" which are available in " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SectionAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Continuous" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" -" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" This layout mode look like Web Layout mode in MS word. Instead of having pages of content, it will have single page which displays the whole content" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="1. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Inlines">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="It allows you to " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="define the c" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ontent into paragraphs. It can be added only inside the sec" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="tions. We " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="can" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" keep 'n' number of Paragraphs inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SectionAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". Each and every paragraph may co" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="n" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="tain the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inline elements " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="like " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SpanAdv, HyperlinkAdv, ImageContainerAdv">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" and"/>
+                        <Syncfusion:SpanAdv Text=" UIContainerAdv"/>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="2. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Text Formatting">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="As Inline will be the content property of the ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", SpanAdv can be added only inside the ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". Every ParagraphAdv can keep 'n' number of " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inlines" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inside it." >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="It allows you to display the format" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ted text using advanced features like " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="FontSize" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="FontFamily">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="StrikeThrough"  >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Baseline" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="3. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Insert an Image" >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv>
+                        <Syncfusion:SpanAdv Text="In order to insert an image into the document, we offer " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ImageContainerAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inline in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="RichTex" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="t" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="BoxAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". It can be added only inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="4. " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Insert a UIElement">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="In order to insert " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="a" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" UIElement into the document, we offer " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="UIContainerAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inline in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="RichTex" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="t" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="BoxAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". It can be added only inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="5. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Modes">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Layout mode feature allows " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="choosing" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" several " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="layouts" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="document. " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Page" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" -" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Single" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" document in the edited content can be " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="separated" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" into" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" 'n'" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" number of pages" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" depend upon the capacity of the content" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". We can customize the page margin and size using the properties" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" which are available in " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SectionAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Continuous" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" -" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" This layout mode look like Web Layout mode in MS word. Instead of having pages of content, it will have single page which displays the whole content" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="1. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Inlines">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="It allows you to " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="define the c" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ontent into paragraphs. It can be added only inside the sec" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="tions. We " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="can" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" keep 'n' number of Paragraphs inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SectionAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". Each and every paragraph may co" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="n" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="tain the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inline elements " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="like " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SpanAdv, HyperlinkAdv, ImageContainerAdv">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" and"/>
+                        <Syncfusion:SpanAdv Text=" UIContainerAdv"/>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="2. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Text Formatting">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="As Inline will be the content property of the ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", SpanAdv can be added only inside the ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". Every ParagraphAdv can keep 'n' number of " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="inlines" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inside it." >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="It allows you to display the format" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ted text using advanced features like " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="FontSize" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="FontFamily">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="StrikeThrough"  >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=", " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Baseline" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="3. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Insert an Image" >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv>
+                        <Syncfusion:SpanAdv Text="In order to insert an image into the document, we offer " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ImageContainerAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inline in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="RichTex" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="t" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="BoxAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". It can be added only inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="4. " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Insert a UIElement">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="In order to insert " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="a" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" UIElement into the document, we offer " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="UIContainerAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" inline in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="RichTex" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="t" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="BoxAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". It can be added only inside the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="ParagraphAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="5. ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" ">
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Modes">
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Layout mode feature allows " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="choosing" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" several " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="layouts" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" in the " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="document. " >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Page" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" -" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Single" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" document in the edited content can be " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="separated" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" into" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" 'n'" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" number of pages" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" depend upon the capacity of the content" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=". We can customize the page margin and size using the properties" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" which are available in " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="SectionAdv" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                    <Syncfusion:ParagraphAdv >
+                        <Syncfusion:SpanAdv Text="Continuous" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" " >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="Layout" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" -" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text=" This layout mode look like Web Layout mode in MS word. Instead of having pages of content, it will have single page which displays the whole content" >
+                        </Syncfusion:SpanAdv>
+                        <Syncfusion:SpanAdv Text="." >
+                        </Syncfusion:SpanAdv>
+                    </Syncfusion:ParagraphAdv>
+                </Syncfusion:SectionAdv>
+            </Syncfusion:DocumentAdv>
+        </Syncfusion:SfRichTextBoxAdv>
+    </Grid>
+
+</Syncfusion:RibbonWindow>

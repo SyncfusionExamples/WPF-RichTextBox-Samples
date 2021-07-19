@@ -1,0 +1,1361 @@
+<Syncfusion:DocumentAdv xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:Syncfusion="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.WPF">
+  <Syncfusion:DocumentAdv.ParagraphFormat >
+    <Syncfusion:ParagraphFormat />
+  </Syncfusion:DocumentAdv.ParagraphFormat>
+  <Syncfusion:DocumentAdv.AbstractLists  />
+  <Syncfusion:DocumentAdv.Lists  />
+  <Syncfusion:SectionAdv >
+    <Syncfusion:TableAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="945" CellMargin="0,0,0,0" ColumnSpan="3" RowSpan="1" Background="#FFC6D9F1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Date: ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="9">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="th">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="March">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=", 2014 ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="Time:  ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="12.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="10">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="pm">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="                                           Location:">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=" Myers St, Geelong">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="945" CellMargin="0,0,0,0" ColumnSpan="3" RowSpan="1" Background="#FFFFFFFF" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:TableAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="207.59999593099" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text="Attendees">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text="Shir">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="ley Martyn- ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="Julian,">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="Hope">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text=" Mann">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text=",">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="Gordon Donaldson, Meg Dunn">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text=", Rita Morning Starr, Heather Reeves, ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="Hazel ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="Dando">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text=", ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text="Margit">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="207.59999593099" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="6" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text="Apologies">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text="Jan Brady">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+            <Syncfusion:TableRowAdv>
+              <Syncfusion:TableCellAdv>
+                <Syncfusion:TableCellAdv.CellFormat>
+                  <Syncfusion:CellFormat CellWidth="721.933349609375" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+                </Syncfusion:TableCellAdv.CellFormat>
+                <Syncfusion:ParagraphAdv>
+                  <Syncfusion:ParagraphAdv.ParagraphFormat>
+                    <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+                  </Syncfusion:ParagraphAdv.ParagraphFormat>
+                  <Syncfusion:ParagraphAdv.CharacterFormat>
+                    <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                  </Syncfusion:ParagraphAdv.CharacterFormat>
+                  <Syncfusion:SpanAdv Text=" ">
+                    <Syncfusion:SpanAdv.CharacterFormat>
+                      <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+                    </Syncfusion:SpanAdv.CharacterFormat>
+                  </Syncfusion:SpanAdv>
+                </Syncfusion:ParagraphAdv>
+              </Syncfusion:TableCellAdv>
+            </Syncfusion:TableRowAdv>
+          </Syncfusion:TableAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="calibri" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="calibri" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" Background="#FFC6D9F1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Center" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Center" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Item">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Center" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="#">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" Background="#FFC6D9F1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Center" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Center" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Points of Discussion">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" Background="#FFC6D9F1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Center" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Action Required / Person Responsible">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Chairperson">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=": Shirley Julian-Martyn                                                       Minute Taker: Meg Dunn">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Opening Prayer">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="1.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Previous minutes to be accepted:">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=" Yes">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Moved: ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="Meg Dunn">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Carried: ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="Shirley MJ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="2.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Business Arising:">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Minutes ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="accepted">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Moved: ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="Gordon Donaldson">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Carried: Shirley MJ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="3.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Business Report">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=":">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="No Report">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="4.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Correspondence In:">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="48" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="5.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Correspondence Out:">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="24" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+      <Syncfusion:TableRowAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="49.4666646321615" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="6.">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="737.066650390625" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Finance report:">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=" Balance as at ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="28">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="/02/2014">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text=" $">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="2,">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="845.44">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="See attached Finance Report">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="48" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="16" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+        <Syncfusion:TableCellAdv>
+          <Syncfusion:TableCellAdv.CellFormat>
+            <Syncfusion:CellFormat CellWidth="158.466664632161" CellMargin="0,0,0,0" ColumnSpan="1" RowSpan="1" />
+          </Syncfusion:TableCellAdv.CellFormat>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text=" ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Moved: Heather Reeves">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+          <Syncfusion:ParagraphAdv>
+            <Syncfusion:ParagraphAdv.ParagraphFormat>
+              <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+            </Syncfusion:ParagraphAdv.ParagraphFormat>
+            <Syncfusion:ParagraphAdv.CharacterFormat>
+              <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+            </Syncfusion:ParagraphAdv.CharacterFormat>
+            <Syncfusion:SpanAdv Text="Carried: ">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+            <Syncfusion:SpanAdv Text="Meg Dunn">
+              <Syncfusion:SpanAdv.CharacterFormat>
+                <Syncfusion:CharacterFormat FontSize="10.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+              </Syncfusion:SpanAdv.CharacterFormat>
+            </Syncfusion:SpanAdv>
+          </Syncfusion:ParagraphAdv>
+        </Syncfusion:TableCellAdv>
+      </Syncfusion:TableRowAdv>
+    </Syncfusion:TableAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="18.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="18.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="18.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="18.6666666666667" FontFamily="arial" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Meeting Closed: ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="12.3">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="0">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="pm">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Next Meeting scheduled for: ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Date: ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="13">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="/">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="04">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="/201">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="4">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Time: ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="12.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="00">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="pm">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Venue: ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="St Mary’s Myers St, Geelong">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="14.6666666666667" FontFamily="arial" Bold="True" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="arial" Italic="False" StrikeThrough="None" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="arial" Italic="False" StrikeThrough="None" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+  </Syncfusion:SectionAdv>
+</Syncfusion:DocumentAdv>

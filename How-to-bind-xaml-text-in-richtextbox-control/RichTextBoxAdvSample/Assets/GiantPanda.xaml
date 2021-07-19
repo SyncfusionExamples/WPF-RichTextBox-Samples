@@ -1,0 +1,109 @@
+<Syncfusion:DocumentAdv xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:Syncfusion="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.WPF">
+  <Syncfusion:DocumentAdv.ParagraphFormat >
+    <Syncfusion:ParagraphFormat />
+  </Syncfusion:DocumentAdv.ParagraphFormat>
+  <Syncfusion:DocumentAdv.AbstractLists  />
+  <Syncfusion:DocumentAdv.Lists  />
+  <Syncfusion:SectionAdv >
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="46.6666666666667" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="53.3333333333333" FontFamily="segoe ui light" Italic="False" StrikeThrough="None" FontColor="#FF00CC66" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="The Giant Panda">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="53.3333333333333" FontFamily="segoe ui light" Italic="False" StrikeThrough="None" FontColor="#FF00CC66" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="13.3333333333333" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="The giant panda, which only lives in China outside of captivity, has captured the hearts of people of all ages across the globe.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="From their furry black and white bodies to their shy and docile nature, they are considered one of the world's most loved animals.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="13.3333333333333" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Quick Fact">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Bold="True" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" The estimated number of giant pandas in the wild varies between 1,500 and 3,000.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="32" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="24" FontFamily="segoe ui" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Intriguing Giant Panda Mysteries">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="24" FontFamily="segoe ui" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="13.3333333333333" BeforeSpacing="0" LineSpacing="1.15000001589457" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="While most adore their fluffy fur and round heads, which help give them their cuddly bear quality, others are fascinated by the many mysteries of the giant panda.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="Did you know that the giant panda may actually be a raccoon, they have an opposable pseudo thumb, and that they’re technically a carnivore even though their diet is primarily vegetarian?">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="These things and more have baffled scientists and naturalists for hundreds of years.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="calibri" Italic="False" StrikeThrough="None" FontColor="#FF595959" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+  </Syncfusion:SectionAdv>
+</Syncfusion:DocumentAdv>

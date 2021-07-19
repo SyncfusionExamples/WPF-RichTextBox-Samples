@@ -1,0 +1,49 @@
+﻿<Window x:Class="Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        Title="MainWindow" WindowState="Maximized">
+
+    <Window.Resources>
+
+        <!-- Defines the custom style for tool tip. -->
+        <Style x:Key="ToolTipStyle" TargetType="{x:Type ToolTip}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#2D2D2D"/>
+            <Setter Property="Background"  Value="#000000" />
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToolTip}">
+                        <Border x:Name="Root" CornerRadius="2" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                            <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsOpen" Value="False">
+                                <Setter TargetName="Root" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- Defines the customized tool tip. -->
+        <ToolTip x:Key="CustomToolTip" Style="{StaticResource ToolTipStyle}"/>
+        
+    </Window.Resources>
+
+    <!-- SfRichTextBoxAdv control with customized tool tip. -->
+    <RichTextBoxAdv:SfRichTextBoxAdv x:Name="richTextBoxAdv" ToolTip="{StaticResource CustomToolTip}" xmlns:RichTextBoxAdv="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.Wpf">
+        <RichTextBoxAdv:SfRichTextBoxAdv.SpellChecker>
+            <RichTextBoxAdv:SpellChecker IsEnabled="True">
+                <RichTextBoxAdv:SpellChecker.CustomDictionaries>
+                    <System:String>../../Assets/Default.dic</System:String>
+                </RichTextBoxAdv:SpellChecker.CustomDictionaries>
+            </RichTextBoxAdv:SpellChecker>
+        </RichTextBoxAdv:SfRichTextBoxAdv.SpellChecker>
+    </RichTextBoxAdv:SfRichTextBoxAdv>
+
+</Window>
