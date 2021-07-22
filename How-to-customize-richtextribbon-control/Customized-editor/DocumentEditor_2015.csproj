@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B5E623B-170B-44D7-B692-694741D70EE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DocumentEditor</RootNamespace>
+    <AssemblyName>DocumentEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;Framework4_6</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Framework4_6</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.Compression.Base" />
+    <Reference Include="Syncfusion.OfficeChart.Base" />
+    <Reference Include="Syncfusion.DocIO.Base" />
+    <Reference Include="Syncfusion.SfRichTextBoxAdv.WPF" />
+    <Reference Include="Syncfusion.Shared.Wpf" />
+    <Reference Include="Syncfusion.Tools.Wpf" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Luna" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Resources\DocumentEditor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentEditor.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DocumentEditorResourceWrapper.cs" />
+    <Compile Include="Resources\SR.cs" />
+    <Compile Include="ViewModel\ListViewModel.cs" />
+    <Page Include="DocumentEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentEditor.xaml.cs">
+      <DependentUpon>DocumentEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Binding\Converters.cs" />
+    <Compile Include="RunAdv.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\GettingStarted.docx" />
+    <EmbeddedResource Include="Resources\DocumentEditor.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocumentEditor.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App.ico" />
+    <Resource Include="Assets\Default.png" />
+    <Resource Include="Assets\PrintLayout.png" />
+    <Resource Include="Assets\RTE.png" />
+    <Resource Include="Assets\Syncfusion.png" />
+    <Resource Include="Assets\SyncLogo.png" />
+    <Resource Include="Assets\WebLayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backstage\AddDigitalSignature.png" />
+    <Resource Include="Images\Backstage\Help.png" />
+    <Resource Include="Images\Backstage\HtmlIcon.png" />
+    <Resource Include="Images\Backstage\New32.png" />
+    <Resource Include="Images\Backstage\Open32.png" />
+    <Resource Include="Images\Backstage\Print32.png" />
+    <Resource Include="Images\Backstage\Protect.png" />
+    <Resource Include="Images\Backstage\RestrictAccess.png" />
+    <Resource Include="Images\Backstage\Save32.png" />
+    <Resource Include="Images\Backstage\SaveAs32.png" />
+    <Resource Include="Images\Backstage\Started.png" />
+    <Resource Include="Images\Backstage\TextDocument32.png" />
+    <Resource Include="Images\Backstage\Word2007.png" />
+    <Resource Include="Images\Backstage\Word2010.png" />
+    <Resource Include="Images\Backstage\XamlIcon.png" />
+    <Resource Include="Images\Home\Clipboard\Copy16.png" />
+    <Resource Include="Images\Home\Clipboard\Cut16.png" />
+    <Resource Include="Images\Home\Clipboard\Paste16.png" />
+    <Resource Include="Images\Home\Clipboard\Paste32.png" />
+    <Resource Include="Images\Home\Editing\Find.png" />
+    <Resource Include="Images\Home\Editing\Replace.png" />
+    <Resource Include="Images\Home\Editing\RestrictEditing.png" />
+    <Resource Include="Images\Home\Editing\Select.png" />
+    <Resource Include="Images\Home\Font\Bold16.png" />
+    <Resource Include="Images\Home\Font\FontDialog.png" />
+    <Resource Include="Images\Home\Font\Fonts16.png" />
+    <Resource Include="Images\Home\Font\GrowFont16.png" />
+    <Resource Include="Images\Home\Font\HighlightColor16.png" />
+    <Resource Include="Images\Home\Font\Italic16.png" />
+    <Resource Include="Images\Home\Font\ShrinkFont16.png" />
+    <Resource Include="Images\Home\Font\Strikethrough16.png" />
+    <Resource Include="Images\Home\Font\Subscript16.png" />
+    <Resource Include="Images\Home\Font\Superscript16.png" />
+    <Resource Include="Images\Home\Font\Underline16.png" />
+    <Resource Include="Images\Home\Paragraph\AlignTextCenter16.png" />
+    <Resource Include="Images\Home\Paragraph\AlignTextJustify16.png" />
+    <Resource Include="Images\Home\Paragraph\AlignTextLeft16.png" />
+    <Resource Include="Images\Home\Paragraph\AlignTextRight16.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets16.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Arrow.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Circle.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Dot.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Flower.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Image.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_None.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Square.png" />
+    <Resource Include="Images\Home\Paragraph\Bullets\Bullet_Tick.png" />
+    <Resource Include="Images\Home\Paragraph\DecreaseIndent16.png" />
+    <Resource Include="Images\Home\Paragraph\IncreaseIndent16.png" />
+    <Resource Include="Images\Home\Paragraph\LineSpacing16.png" />
+    <Resource Include="Images\Home\Paragraph\List16.png" />
+    <Resource Include="Images\Home\Paragraph\List\List_Bullets.png" />
+    <Resource Include="Images\Home\Paragraph\List\List_Multilevel.png" />
+    <Resource Include="Images\Home\Paragraph\List\List_Normal.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering16.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_LowLetter_Brace.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_LowLetter_Dot.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_LowRoman.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_None.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_Number_Brace.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_Number_Dot.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_UpLetter.png" />
+    <Resource Include="Images\Home\Paragraph\Numbering\Numbering_UpRoman.png" />
+    <Resource Include="Images\Home\Paragraph\ParagraphDialog.png" />
+    <Resource Include="Images\Insert\Hyperlink32.png" />
+    <Resource Include="Images\Insert\Picture32.png" />
+    <Resource Include="Images\Insert\Table16.png" />
+    <Resource Include="Images\Insert\Table32.png" />
+    <Resource Include="Images\QAT\Redo16.png" />
+    <Resource Include="Images\QAT\Save16.png" />
+    <Resource Include="Images\QAT\Undo16.png" />
+    <Resource Include="Images\Review\Spelling.png" />
+    <Resource Include="Images\Review\DeleteComment.png" />
+    <Resource Include="Images\Review\NewComment.png" />
+    <Resource Include="Images\Review\NextComment.png" />
+    <Resource Include="Images\Review\PreviousComment.png" />
+    <Resource Include="Images\Review\ShowComments.png" />
+    <Resource Include="Images\RTE.png" />
+    <Resource Include="Images\Syncfusion.png" />
+    <Resource Include="Images\View\FlowLayout.png" />
+    <Resource Include="Images\View\MultiplePages.png" />
+    <Resource Include="Images\View\OnePage.png" />
+    <Resource Include="Images\View\PageLayout.png" />
+    <Resource Include="Images\View\PageWidth.png" />
+    <Resource Include="Images\View\ResetZoom.png" />
+    <Resource Include="Images\View\ZoomIn.png" />
+    <Resource Include="Images\View\ZoomOut.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

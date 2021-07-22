@@ -1,0 +1,260 @@
+<Syncfusion:DocumentAdv xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:Syncfusion="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.WPF">
+  <Syncfusion:DocumentAdv.ParagraphFormat >
+    <Syncfusion:ParagraphFormat />
+  </Syncfusion:DocumentAdv.ParagraphFormat>
+  <Syncfusion:DocumentAdv.AbstractLists >
+    <Syncfusion:AbstractListAdv AbstractListId="0">
+      <Syncfusion:AbstractListAdv.Levels>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Arabic" StartAt="1" FollowCharacter="Tab" RestartLevel="0" NumberFormat="%1.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="48" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="LowLetter" StartAt="1" FollowCharacter="Tab" RestartLevel="1" NumberFormat="%2.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="96" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="LowRoman" StartAt="1" FollowCharacter="Tab" RestartLevel="2" NumberFormat="%3.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="144" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Arabic" StartAt="1" FollowCharacter="Tab" RestartLevel="3" NumberFormat="%4.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="192" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="LowLetter" StartAt="1" FollowCharacter="Tab" RestartLevel="4" NumberFormat="%5.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="240" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="LowRoman" StartAt="1" FollowCharacter="Tab" RestartLevel="5" NumberFormat="%6.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="288" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Arabic" StartAt="1" FollowCharacter="Tab" RestartLevel="6" NumberFormat="%7.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="336" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="LowLetter" StartAt="1" FollowCharacter="Tab" RestartLevel="7" NumberFormat="%8.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="384" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="LowRoman" StartAt="1" FollowCharacter="Tab" RestartLevel="8" NumberFormat="%9.">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="432" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+      </Syncfusion:AbstractListAdv.Levels>
+    </Syncfusion:AbstractListAdv>
+    <Syncfusion:AbstractListAdv AbstractListId="1">
+      <Syncfusion:AbstractListAdv.Levels>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Symbol" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="48" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="o">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Courier New" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="96" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Wingdings" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="144" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Symbol" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="192" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="o">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Courier New" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="240" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Wingdings" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="288" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Symbol" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="336" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="o">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Courier New" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="384" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+        <Syncfusion:ListLevelAdv ListLevelPattern="Bullet" FollowCharacter="Tab" NumberFormat="">
+          <Syncfusion:ListLevelAdv.CharacterFormat>
+            <Syncfusion:CharacterFormat FontSize="13.3333333333333" FontFamily="Wingdings" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" />
+          </Syncfusion:ListLevelAdv.CharacterFormat>
+          <Syncfusion:ListLevelAdv.ParagraphFormat>
+            <Syncfusion:ParagraphFormat LeftIndent="432" />
+          </Syncfusion:ListLevelAdv.ParagraphFormat>
+        </Syncfusion:ListLevelAdv>
+      </Syncfusion:AbstractListAdv.Levels>
+    </Syncfusion:AbstractListAdv>
+  </Syncfusion:DocumentAdv.AbstractLists>
+  <Syncfusion:DocumentAdv.Lists >
+    <Syncfusion:ListAdv ListId="0" AbstractListId="0" />
+    <Syncfusion:ListAdv ListId="1" AbstractListId="1" />
+    <Syncfusion:ListAdv ListId="2" AbstractListId="0" />
+    <Syncfusion:ListAdv ListId="3" AbstractListId="1" />
+    <Syncfusion:ListAdv ListId="4" AbstractListId="0" />
+    <Syncfusion:ListAdv ListId="5" AbstractListId="1" />
+  </Syncfusion:DocumentAdv.Lists>
+  <Syncfusion:SectionAdv >
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="12" FontFamily="Segoe UI" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FFFF0000" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+      <Syncfusion:SpanAdv Text="Tiger">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="24" FontFamily="Segoe UI" Bold="True" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FFFF0000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat LeftIndent="0" RightIndent="0" FirstLineIndent="0" TextAlignment="Left" AfterSpacing="0" BeforeSpacing="0" LineSpacing="1" LineSpacingType="Multiple" />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:ParagraphAdv.CharacterFormat>
+        <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+      </Syncfusion:ParagraphAdv.CharacterFormat>
+    </Syncfusion:ParagraphAdv>
+    <Syncfusion:ParagraphAdv>
+      <Syncfusion:ParagraphAdv.ParagraphFormat>
+        <Syncfusion:ParagraphFormat />
+      </Syncfusion:ParagraphAdv.ParagraphFormat>
+      <Syncfusion:SpanAdv Text="The tiger (">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="Panthera tigris">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="True" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=") is the largest cat species, reaching a total body length of up to ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="3.38 m">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="True" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" (11.1 ft.) over curves and exceptionally weighing up to ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="388.7 kg">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="True" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" (857 lb) in the wild. Its most recognizable feature is a pattern of dark vertical stripes on reddish-orange fur with a lighter underside. The species is classified in the genus ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="Panthera">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="True" Italic="True" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=" with the ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="lion, leopard, jaguar and snow leopard">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" Underline="Single" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=". Tigers are ">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text="apex predators">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF002060" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+      <Syncfusion:SpanAdv Text=", primarily preying on ungulates such as deer and bovid. They are territorial and generally solitary but social animals, often requiring large contiguous areas of habitat that support their prey requirements. This, coupled with the fact that they are indigenous to some of the more densely populated places on Earth, has caused significant conflicts with humans.">
+        <Syncfusion:SpanAdv.CharacterFormat>
+          <Syncfusion:CharacterFormat FontSize="16" FontFamily="Times New Roman" Bold="False" Italic="False" StrikeThrough="None" BaselineAlignment="Normal" FontColor="#FF000000" />
+        </Syncfusion:SpanAdv.CharacterFormat>
+      </Syncfusion:SpanAdv>
+    </Syncfusion:ParagraphAdv>
+  </Syncfusion:SectionAdv>
+</Syncfusion:DocumentAdv>

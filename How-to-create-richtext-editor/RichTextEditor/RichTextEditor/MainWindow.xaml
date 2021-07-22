@@ -1,0 +1,54 @@
+﻿<Window x:Class="RichTextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RichTextEditor"
+        mc:Ignorable="d"
+        Title="RichTextEditor" Height="450" Width="800" Name="window"
+        xmlns:SfTools="http://schemas.syncfusion.com/wpf"
+        xmlns:SfRichTextBox="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.Wpf">
+    
+    <Window.Resources>
+        <SfTools:FontFamilyStringConverter x:Key="FontFamilyStringConverter"/>
+        <SfTools:UnderlineToggleConverter x:Key="UnderlineToggleConverter"/>
+        <SfTools:SingleStrikeThroughToggleConverter x:Key="SingleStrikeThroughToggleConverter"/>
+        <SfTools:LeftAlignmentToggleConverter x:Key="LeftAlignmentToggleConverter"/>
+        <SfTools:RightAlignmentToggleConverter x:Key="RightAlignmentToggleConverter"/>
+        <SfTools:CenterAlignmentToggleConverter x:Key="CenterAlignmentToggleConverter"/>
+        <SfTools:JustifyAlignmentToggleConverter x:Key="JustifyAlignmentToggleConverter"/>
+    </Window.Resources>
+    
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <SfTools:ToolBarAdv Grid.Row="0" Focusable="False">
+                <ComboBox Margin="12 2 0 2" Focusable="False" Height="22" Width="160" x:Name="fontFamilyCombo" SelectedValue="{Binding Path=Selection.CharacterFormat.FontFamily, Mode=TwoWay, ElementName=richTextBoxAdv,Converter={StaticResource FontFamilyStringConverter}}"
+                        ItemsSource="{Binding Path=FontFamilySource}"/>
+                <ComboBox Margin="12 2 0 2" IsTabStop="False" Height="22" Width="45" x:Name="fontSizeCombo" SelectedIndex="3" ItemsSource="{Binding Path=FontSizeSource}"
+                                 SelectedValue="{Binding Path=Selection.CharacterFormat.FontSize ,Mode=TwoWay,ElementName=richTextBoxAdv}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Bold16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.Bold,Mode=TwoWay}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Italic16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.Italic,Mode=TwoWay}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Underline16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.Underline,Mode=TwoWay,Converter={StaticResource UnderlineToggleConverter}}"/>
+                <SfTools:ToolBarItemSeparator Margin="12 2 0 2" ></SfTools:ToolBarItemSeparator>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextLeft16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource LeftAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextCenter16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource CenterAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextRight16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource RightAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextJustify16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource JustifyAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <SfTools:ToolBarItemSeparator Margin="12 2 0 2" ></SfTools:ToolBarItemSeparator>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Insert/Hyperlink16.png" Command="SfRichTextBox:SfRichTextBoxAdv.ShowHyperlinkDialogCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Insert/Picture16.png" Command="SfRichTextBox:SfRichTextBoxAdv.InsertPictureCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <SfTools:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Insert/Table16.png" Command="SfRichTextBox:SfRichTextBoxAdv.ShowInsertTableDialogCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+            </SfTools:ToolBarAdv>
+
+            <SfRichTextBox:SfRichTextBoxAdv x:Name="richTextBoxAdv" LayoutType="Continuous" Grid.Row="1" EnableMiniToolBar="False"></SfRichTextBox:SfRichTextBoxAdv>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,254 @@
+﻿<Window x:Class="Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:this="clr-namespace:Sample"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="MainWindow" Height="350" Width="525" x:Name="window">
+
+    <Window.Resources>
+        <Syncfusion:FontFamilyStringConverter x:Key="FontFamilyStringConverter"/>
+        <Syncfusion:UnderlineToggleConverter x:Key="UnderlineToggleConverter"/>
+        <Syncfusion:SingleStrikeThroughToggleConverter x:Key="SingleStrikeThroughToggleConverter"/>
+        <Syncfusion:LeftAlignmentToggleConverter x:Key="LeftAlignmentToggleConverter"/>
+        <Syncfusion:RightAlignmentToggleConverter x:Key="RightAlignmentToggleConverter"/>
+        <Syncfusion:CenterAlignmentToggleConverter x:Key="CenterAlignmentToggleConverter"/>
+        <Syncfusion:JustifyAlignmentToggleConverter x:Key="JustifyAlignmentToggleConverter"/>
+        <Syncfusion:DoubleStrikeThroughToggleConverter x:Key="DoubleStrikeThroughToggleConverter"/>
+        <Syncfusion:SubscriptToggleConverter x:Key="SubscriptToggleConverter"/>
+        <Syncfusion:SuperscriptToggleConverter x:Key="SuperscriptToggleConverter"/>
+        <Syncfusion:LineSpacingTypeStringConverter x:Key="LineSpacingTypeStringConverter"/>
+        <this:LineSpacingToggleConverter x:Key="LineSpacingToggleConverter"/>
+        <this:HighlightColorToggleConverter x:Key="HighlightColorToggleConverter"/>
+        <this:DoubleStringConverter x:Key="DoubleStringConverter"/>
+        <this:ListToggleConverter x:Key="ListToggleConverter"/>
+        <Style x:Key="HighlightColorToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" BorderBrush="Red" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <Border x:Name="checkedBorder" BorderBrush="Yellow" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                                <Setter Property="BorderThickness" TargetName="checkedBorder" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                                <Setter Property="BorderThickness" TargetName="checkedBorder" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="BorderThickness" TargetName="border" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <this:ViewModel />
+    </Window.DataContext>
+    
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="4">
+                <TextBlock Text="Animal :"/>
+                <ComboBox IsTabStop="False" ItemsSource="{Binding Animals}" SelectedValue="{Binding Animal, Mode=TwoWay}"/>
+            </StackPanel>
+            <Syncfusion:ToolBarAdv Grid.Row="1" Focusable="False">
+                <ComboBox Margin="12 2 0 2" Focusable="False" Height="22" Width="160" x:Name="fontFamilyCombo" SelectedValue="{Binding Path=Selection.CharacterFormat.FontFamily, Mode=TwoWay, ElementName=richTextBoxAdv,Converter={StaticResource FontFamilyStringConverter}}"
+                        ItemsSource="{Binding Path=FontFamilySource, Mode=TwoWay, ElementName=window}"/>
+                <ComboBox Margin="12 2 0 2" IsTabStop="False" Height="22" Width="45" x:Name="fontSizeCombo" SelectedIndex="3" ItemsSource="{Binding Path=FontSizeSource, Mode=TwoWay, ElementName=window}"
+                                 SelectedValue="{Binding Path=Selection.CharacterFormat.FontSize ,Mode=TwoWay,ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Bold16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.Bold,Mode=TwoWay}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Italic16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.Italic,Mode=TwoWay}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Underline16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.Underline,Mode=TwoWay,Converter={StaticResource UnderlineToggleConverter}}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Font/Strikethrough16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv,Path=Selection.CharacterFormat.StrikeThrough,Mode=TwoWay,Converter={StaticResource SingleStrikeThroughToggleConverter}}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextLeft16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource LeftAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextCenter16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource CenterAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextRight16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource RightAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/AlignTextJustify16.png" IsCheckable="True" IsChecked="{Binding ElementName=richTextBoxAdv, Path=Selection.ParagraphFormat.TextAlignment, Converter={StaticResource JustifyAlignmentToggleConverter}, Mode=TwoWay}"/>
+                <Syncfusion:SplitButtonAdv Margin="12 2 0 2" DataContext="{Binding ElementName=window,Path=ListViewModel}" Click="BulletedListSplitButton_Click"  Focusable="False" Grid.Column="6" SizeMode="Small" SmallIcon="Images/Paragraph/Bullets16.png">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="12"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="Bullets Library" FontWeight="Bold" Padding="4 0 0 0" Margin="2 6" VerticalAlignment="Top" SnapsToDevicePixels="True" />
+                        <Grid Grid.Row="2" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=NoList}" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_None.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Bullet_Dot}" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_Dot.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Bullet_Circle}" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_Circle.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Bullet_Square}" Grid.Column="3" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_Square.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </Grid>
+                        <Grid Grid.Row="3" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Bullet_Flower}" Grid.Column="0" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_Flower.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Bullet_Arrow}" Grid.Column="1" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_Arrow.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Bullet_Tick}" Grid.Column="2" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="40" Width="40" Source="Images/Paragraph/Bullets/Bullet_Tick.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </Grid>
+                    </Grid>
+                </Syncfusion:SplitButtonAdv>
+                <Syncfusion:SplitButtonAdv Margin="12 2 0 2" DataContext="{Binding ElementName=window,Path=ListViewModel}" Click="NumberedListSplitButton_Click" Focusable="False" SizeMode="Small" Grid.Column="7" SmallIcon="Images/Paragraph/Numbering16.png">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="12"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="12"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="12"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="Numbering Library" FontWeight="Bold" Padding="4 0 0 0" Margin="2 6" VerticalAlignment="Top" SnapsToDevicePixels="True" />
+                        <Grid Grid.Row="2" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Focusable="False" Grid.Column="0" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=NoList}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_None.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Grid.Column="1" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_Number_Dot}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_Number_Dot.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Grid.Column="2" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_Number_Brace}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_Number_Brace.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </Grid>
+                        <Grid Grid.Row="3" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Focusable="False" Grid.Column="0" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_UpRoman}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_UpRoman.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Grid.Column="1" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_UpLetter}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_UpLetter.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Grid.Column="2" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_LowLetter_Brace}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_LowLetter_Brace.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </Grid>
+                        <Grid Grid.Row="4" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton Focusable="False" Grid.Column="0" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_LowLetter_Dot}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_LowLetter_Dot.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ToggleButton Focusable="False" Grid.Column="1" Click="DropDownItem_Click" IsChecked="{Binding Path=ListName, Converter={StaticResource ListToggleConverter}, ConverterParameter=_Numbering_LowRoman}" BorderThickness="0" Background="Transparent" Padding="4" HorizontalContentAlignment="Left">
+                                <ToggleButton.Content>
+                                    <Image Height="76" Width="76" Source="Images/Paragraph/Numbering/Numbering_LowRoman.png"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                        </Grid>
+                    </Grid>
+                </Syncfusion:SplitButtonAdv>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/DecreaseIndent16.png" Command="Syncfusion:SfRichTextBoxAdv.DecreaseIndentCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Paragraph/IncreaseIndent16.png" Command="Syncfusion:SfRichTextBoxAdv.IncreaseIndentCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Redo16.png" Command="Syncfusion:SfRichTextBoxAdv.RedoCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Undo16.png" Command="Syncfusion:SfRichTextBoxAdv.UndoCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Insert/Hyperlink16.png" Command="Syncfusion:SfRichTextBoxAdv.ShowHyperlinkDialogCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Insert/Picture16.png" Command="Syncfusion:SfRichTextBoxAdv.InsertPictureCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+                <Syncfusion:ButtonAdv Margin="12 2 0 2" Focusable="False" SizeMode="Small" SmallIcon="Images/Insert/Table16.png" Command="Syncfusion:SfRichTextBoxAdv.ShowInsertTableDialogCommand" CommandTarget="{Binding ElementName=richTextBoxAdv}"/>
+            </Syncfusion:ToolBarAdv>
+            <this:SfRichTextBoxAdvExtension x:Name="richTextBoxAdv" Text="{Binding Path=Description,Mode=TwoWay}" LayoutType="Continuous" EnableMiniToolBar="False" Grid.Row="2">
+                <this:SfRichTextBoxAdvExtension.SpellChecker>
+                    <Syncfusion:SpellChecker IsEnabled="True">
+                        <Syncfusion:SpellChecker.CustomDictionaries>
+                            <System:String>../../Dictionaries/Default.dic</System:String>
+                        </Syncfusion:SpellChecker.CustomDictionaries>
+                    </Syncfusion:SpellChecker>
+                </this:SfRichTextBoxAdvExtension.SpellChecker>
+            </this:SfRichTextBoxAdvExtension>
+        </Grid>
+    </Border>
+
+</Window>
