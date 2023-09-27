@@ -1,0 +1,19 @@
+﻿<Window x:Class="SfRichTextBoxAdv_CustomFont.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SfRichTextBoxAdv_CustomFont"
+        xmlns:RichTextBoxAdv="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <RichTextBoxAdv:SfRichTextBoxAdv x:Name="richTextBoxAdv" FontFamily="Assets/MyFont.ttf#MyFont">
+            <RichTextBoxAdv:DocumentAdv>
+                <RichTextBoxAdv:DocumentAdv.CharacterFormat>
+                    <RichTextBoxAdv:CharacterFormat FontFamily="Assets/MyFont.ttf#MyFont"/>
+                </RichTextBoxAdv:DocumentAdv.CharacterFormat>
+            </RichTextBoxAdv:DocumentAdv>
+        </RichTextBoxAdv:SfRichTextBoxAdv>
+    </Grid>
+</Window>

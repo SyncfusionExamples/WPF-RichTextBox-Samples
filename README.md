@@ -10,4 +10,4 @@ Repository contains various WPF RichTextBox (SfRichTextBoxAdv) samples.
 6. [How to customize SfRichTextRibbon in WPF RichTextBox (SfRichTextBoxAdv)?](https://www.syncfusion.com/kb/5417/is-it-possible-to-customize-sfrichtextribbon-control) - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-customize-richtextribbon-control)
 7. [How to bind xaml text in WPF RichTextBox (SfRichTextBoxAdv) control?](https://www.syncfusion.com/kb/5416/how-to-bind-xaml-text-in-sfrichtextboxadv-control) - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-bind-xaml-text-in-richtextbox-control)
 8. How to add custom dictionaries in WPF RichTextBox (SfRichTextBoxAdv) control? - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-add-custom-dictionaries-in-richtextbox)
-
+9. How to use custom font in WPF RichTextBox (SfRichTextBoxAdv) control? - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-use-custom-font-in-richtextbox)
