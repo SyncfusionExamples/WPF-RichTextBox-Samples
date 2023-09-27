@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfRichTextBoxAdv_CustomFont", "SfRichTextBoxAdv_CustomFont\SfRichTextBoxAdv_CustomFont.csproj", "{AFA17989-A655-43A7-B44E-FB2C9FB0FF9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFA17989-A655-43A7-B44E-FB2C9FB0FF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA17989-A655-43A7-B44E-FB2C9FB0FF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA17989-A655-43A7-B44E-FB2C9FB0FF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA17989-A655-43A7-B44E-FB2C9FB0FF9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F60145F-5A17-4C3D-82F7-4D3FADD4B41D}
+	EndGlobalSection
+EndGlobal
