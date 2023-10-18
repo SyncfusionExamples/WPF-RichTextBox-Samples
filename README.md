@@ -1,7 +1,7 @@
 Syncfusuion WPF RichTextBox (SfRichTextBoxAdv)
 ----------------------------
 
-The Syncfusion [WPF RichTextBox] (https://www.syncfusion.com/wpf-controls/richtextbox?utm_source=github&utm_medium=github&utm_campaign=github-wpf-rte-examples) (SfRichTextBoxAdv) control allows you to view, edit and print rich text content including text, images, hyperlink etc. arranged in sections, tables, paragraphs, headers, footers and comments. You can perform all editing operations using keyboard, mouse and touch.
+The Syncfusion [WPF RichTextBox](https://www.syncfusion.com/wpf-controls/richtextbox?utm_source=github&utm_medium=github&utm_campaign=github-wpf-rte-examples) (SfRichTextBoxAdv) control allows you to view, edit and print rich text content including text, images, hyperlink etc. arranged in sections, tables, paragraphs, headers, footers and comments. You can perform all editing operations using keyboard, mouse and touch.
 
 Key Features
 ------------
