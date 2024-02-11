@@ -15,6 +15,7 @@ Key Features
 7. [How to bind xaml text in WPF RichTextBox (SfRichTextBoxAdv) control?](https://www.syncfusion.com/kb/5416/how-to-bind-xaml-text-in-sfrichtextboxadv-control) - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-bind-xaml-text-in-richtextbox-control)
 8. How to add custom dictionaries in WPF RichTextBox (SfRichTextBoxAdv) control? - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-add-custom-dictionaries-in-richtextbox)
 9. How to use custom font in WPF RichTextBox (SfRichTextBoxAdv) control? - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-use-custom-font-in-richtextbox)
+10. How to use WPF-RichTextBox (SfRichTextBoxAdv) to show email contents and  EditControl to show the HTML email source? - [Demo](https://github.com/SyncfusionExamples/WPF-RichTextBox-Samples/tree/main/How-to-use-richtextbox-to-show-email-contents-and-editcontrol-to-show-html-email-source)
 
 Supported File Formats
 ----------------------
