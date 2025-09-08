@@ -41,11 +41,12 @@
     <Reference Include="Syncfusion.DocIO.Base, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.DocIO.Wpf.31.1.17\lib\net462\Syncfusion.DocIO.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Edit.WPF, Version=30.1462.37.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Edit.WPF.30.1.37\lib\net462\Syncfusion.Edit.WPF.dll</HintPath>
+    <Reference Include="Syncfusion.Edit.WPF, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Edit.WPF.31.1.17\lib\net462\Syncfusion.Edit.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.GridCommon.WPF, Version=30.1462.37.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.GridCommon.Wpf.30.1.37\lib\net462\Syncfusion.GridCommon.WPF.dll</HintPath>
+      <HintPath>..\packages\Syncfusion.GridCommon.Wpf.31.1.17\lib\net462\Syncfusion.GridCommon.WPF.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Syncfusion.Licensing, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Licensing.31.1.17\lib\net462\Syncfusion.Licensing.dll</HintPath>
@@ -63,7 +64,8 @@
       <HintPath>..\packages\Syncfusion.Shared.WPF.31.1.17\lib\net462\Syncfusion.Shared.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.WPF, Version=30.1462.37.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Tools.WPF.30.1.37\lib\net462\Syncfusion.Tools.WPF.dll</HintPath>
+      <HintPath>..\packages\Syncfusion.Tools.WPF.31.1.17\lib\net462\Syncfusion.Tools.WPF.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
