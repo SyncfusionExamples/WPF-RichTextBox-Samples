@@ -44,7 +44,7 @@
     <Reference Include="Syncfusion.Edit.WPF, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Edit.WPF.31.1.17\lib\net462\Syncfusion.Edit.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.GridCommon.WPF, Version=30.1462.37.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.GridCommon.WPF, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.GridCommon.Wpf.31.1.17\lib\net462\Syncfusion.GridCommon.WPF.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -63,7 +63,7 @@
     <Reference Include="Syncfusion.Shared.WPF, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Shared.WPF.31.1.17\lib\net462\Syncfusion.Shared.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Tools.WPF, Version=30.1462.37.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.Tools.WPF, Version=31.1462.17.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Tools.WPF.31.1.17\lib\net462\Syncfusion.Tools.WPF.dll</HintPath>
       <Private>True</Private>
     </Reference>
