@@ -35,14 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-  <PackageReference Include="Syncfusion.Compression.Base" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.DocIO.Wpf" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.Licensing" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.Markdown" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.OfficeChart.Base" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.Shared.WPF" Version="32.1.19" />
-  <PackageReference Include="Syncfusion.Tools.WPF" Version="32.1.19" />
+  <PackageReference Include="Syncfusion.Compression.Base" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.DocIO.Wpf" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.Licensing" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.Markdown" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.OfficeChart.Base" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.Shared.WPF" Version="33.1.44" />
+  <PackageReference Include="Syncfusion.Tools.WPF" Version="33.1.44" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
