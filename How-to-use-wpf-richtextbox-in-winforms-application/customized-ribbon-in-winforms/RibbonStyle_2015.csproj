@@ -42,15 +42,11 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Syncfusion.DocIO.Base" />
-    <Reference Include="Syncfusion.Licensing, Version=17.4460.0.55, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Licensing.17.4.0.55\lib\net46\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
+    <Reference Include="Syncfusion.Licensing "/>
     <Reference Include="Syncfusion.OfficeChart.Base" />
     <Reference Include="Syncfusion.SfRichTextBoxAdv.WPF" />
     <Reference Include="Syncfusion.Shared.Base" />
-    <Reference Include="Syncfusion.Shared.WPF, Version=17.4460.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>packages\Syncfusion.Shared.WPF.17.4.0.55\lib\net46\Syncfusion.Shared.WPF.dll</HintPath>
-    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF"/>
     <Reference Include="Syncfusion.Tools.Windows" />
     <Reference Include="Syncfusion.Tools.WPF" />
     <Reference Include="Syncfusion.Grid.Base" />
